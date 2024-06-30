@@ -74,23 +74,21 @@ function AddNewEmployee() {
             const interval = setInterval(() => {
                 // update the state after 1000ms
                 setCount((currentCount) => currentCount - 1);
-              }, 1000);
+            }, 1000);
             if (count === 0) {
                 navigate("/");
                 return () => clearInterval(interval);
             }
-        } 
+        }
     }, [employeeAdded, count, navigate])
 
     return (
         <div>
             <Header />
             <main>
-                <section className="side-menu">
-                    <SideMenu />
-                </section>
+                <SideMenu />
                 <section className={employeeAdded ? "hidden" : "content"}>
-                    <h1><span className="text-primary">Add</span> new employee</h1>
+                    <h1><span className="text-primary-color">Add</span> new employee</h1>
                     <form className="add-new">
                         <label htmlFor="fname">First Name:</label>
                         <input
@@ -148,7 +146,7 @@ function AddNewEmployee() {
                     </form>
                 </section>
                 <section className={employeeAdded ? "content" : "hidden"}>
-                    <h1><span className="text-primary">Employee</span> succesfully added</h1>
+                    <h1><span className="text-primary-color">Employee</span> succesfully added</h1>
                     <p className="text-center">Redirecting you in {count}s</p>
                 </section>
             </main>

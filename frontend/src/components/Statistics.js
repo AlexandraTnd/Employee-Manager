@@ -6,9 +6,7 @@ function Statistics() {
         <div>
             <Header />
             <main>
-                <section className="side-menu">
-                    <SideMenu />
-                </section>
+                <SideMenu />
                 <section className="content">
                     <h1>TO DO</h1>
                 </section>
