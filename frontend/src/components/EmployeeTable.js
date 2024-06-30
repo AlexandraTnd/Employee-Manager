@@ -109,8 +109,8 @@ function EmployeeTable() {
                                         <td>{index + 1}</td>
                                         <td>{employee.lastName + " " + employee.firstName}</td>
                                         <td>{employee.address.street + " no. " + employee.address.streetNumber + ", " + employee.address.city}</td>
-                                        <td className='text-center'>{employee.position}</td>
-                                        <td className='text-center'>{employee.hireDate}</td>
+                                        <td>{employee.position}</td>
+                                        <td>{employee.hireDate}</td>
                                     </tr> : ""
                             )
                         }) : <tr><td colSpan={5} className='text-center'>No Data to view</td></tr>
