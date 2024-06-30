@@ -1,28 +1,38 @@
-import {useEffect, useState} from 'react';
+import { useState } from 'react';
 
-function Pagination({ employees }) {
-    const [currentPage, setCurrentPage] = useState(1)
-    const [maxPages, setMaxPages] = useState(1);
+function Pagination({ employees, currentPage, setCurrentPage }) {
+    
+    const maxPages = Math.ceil(employees.length / 10);
 
-    useEffect(() => {
-        if (employees) {
-            setMaxPages(employees.length % 10);
-            console.log(employees.length % 10);
+    function handlePageChange(e) {
+        if (e.target.innerText === "Next" && currentPage < maxPages) {
+            setCurrentPage(currentPage + 1);
+        } else if (e.target.innerText === "Previous" && currentPage > 1) {
+            setCurrentPage(currentPage - 1);
+        } else {
+            setCurrentPage(+e.target.innerText);
         }
-    }, [])
+    }
+
     return (
         <div id="pagination" >
             <ul className="pagination">
-                <li className="page-item disabled">
-                    <a className="page-link">Previous</a>
+                <li className={currentPage === 1 ? "page-item disabled" : "page-item"}>
+                    <button onClick={(e) => handlePageChange(e)} className="page-link">Previous</button>
                 </li>
-                <li className="page-item"><a className="page-link" href="#">1</a></li>
-                <li className="page-item active" aria-current="page">
-                    <a className="page-link" href="#">2</a>
+                <li className={currentPage === 1 ? "page-item active" : "page-item"}>
+                    <button onClick={(e) => handlePageChange(e)} className="page-link" >{currentPage === 1 ? "1" : currentPage - 1}</button>
                 </li>
-                <li className="page-item"><a className="page-link" href="#">3</a></li>
-                <li className="page-item">
-                    <a className="page-link" href="#">Next</a>
+                <li className={currentPage !== 1 ? "page-item active" : "page-item"} aria-current="page">
+                    <button onClick={(e) => handlePageChange(e)} className="page-link" href="/">{currentPage === 1 ? currentPage + 1 : currentPage === 2 ? currentPage : currentPage === maxPages ? maxPages - 1 : currentPage}</button>
+                </li>
+                {maxPages === 2 ? "" :
+                    <li className={currentPage === maxPages ? "page-item active" : "page-item"}>
+                        <button className="page-link" href="/">3</button>
+                    </li>
+                }
+                <li className={currentPage === maxPages ? "page-item disabled" : "page-item"}>
+                    <button onClick={(e) => handlePageChange(e)} className="page-link" href="/">Next</button>
                 </li>
             </ul>
         </div>
