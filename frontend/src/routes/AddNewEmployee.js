@@ -1,6 +1,7 @@
 import Header from "../components/Header";
 import SideMenu from "../components/SideMenu";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function AddNewEmployee() {
     const [newEmployee, setNewEmployee] = useState({
@@ -16,6 +17,8 @@ function AddNewEmployee() {
     });
     const [inputsFilled, setInputsFilled] = useState(true);
     const [employeeAdded, setEmployeeAdded] = useState(false);
+    const [count, setCount] = useState(3);
+    const navigate = useNavigate();
 
     function handleFnameChange(e) {
         setNewEmployee((prev) => ({ ...prev, "firstName": e.target.value }))
@@ -49,14 +52,14 @@ function AddNewEmployee() {
         e.preventDefault();
         if (newEmployee.firstName === "" || newEmployee.lastName === "" ||
             newEmployee.address.street === "" || newEmployee.address.streetNumber === "" ||
-            newEmployee.address.city === "" || newEmployee.position === "" || 
+            newEmployee.address.city === "" || newEmployee.position === "" ||
             newEmployee.hireDate === ""
         ) {
             setInputsFilled(false);
         } else {
             const response = await fetch("http://localhost:4000/addnewemployee", {
-                method: "POST", 
-                headers:{'content-type': 'application/json'},
+                method: "POST",
+                headers: { 'content-type': 'application/json' },
                 body: JSON.stringify(newEmployee)
             });
             const result = await response.json();
@@ -65,6 +68,19 @@ function AddNewEmployee() {
             }
         }
     }
+
+    useEffect(() => {
+        if (employeeAdded) {
+            const interval = setInterval(() => {
+                // update the state after 1000ms
+                setCount((currentCount) => currentCount - 1);
+              }, 1000);
+            if (count === 0) {
+                navigate("/");
+                return () => clearInterval(interval);
+            }
+        } 
+    }, [employeeAdded, count, navigate])
 
     return (
         <div>
@@ -83,7 +99,7 @@ function AddNewEmployee() {
                             placeholder="Enter first name"
                             onChange={(e) => handleFnameChange(e)}
                         ></input>
-                        <label htmlFor="lname">First Name:</label>
+                        <label htmlFor="lname">Last Name:</label>
                         <input
                             type="text"
                             name="lname"
@@ -132,7 +148,8 @@ function AddNewEmployee() {
                     </form>
                 </section>
                 <section className={employeeAdded ? "content" : "hidden"}>
-                    <div>Employee succesfully added</div>
+                    <h1><span className="text-primary">Employee</span> succesfully added</h1>
+                    <p className="text-center">Redirecting you in {count}s</p>
                 </section>
             </main>
         </div>
