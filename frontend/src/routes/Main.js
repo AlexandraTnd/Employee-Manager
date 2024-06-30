@@ -1,5 +1,6 @@
 import EmployeeTable from "../components/EmployeeTable";
 import Header from "../components/Header";
+import SideMenu from "../components/SideMenu";
 
 function Main() {
     return (
@@ -7,9 +8,7 @@ function Main() {
             <Header />
             <main>
                 <section className="side-menu">
-                    <ul>
-                        <li><a href="/">See employees</a></li>
-                    </ul>
+                    <SideMenu />
                 </section>
                 <section className="content">
                     <EmployeeTable />
