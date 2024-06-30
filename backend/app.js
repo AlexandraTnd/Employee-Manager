@@ -39,7 +39,7 @@ app.post('/addnewemployee', function (req, res) {
         "hireDate": ""
     };
     let isMatch = true;
-    //Check to see if employee data matches the database format
+    //Check to see if employee data matches the json format
     if (Object.keys(body).length === Object.keys(employeeFormat).length) {
         for (let i = 0; i < Object.keys(body).length; i++) {
             if (Object.keys(body)[i] !== Object.keys(employeeFormat)[i]) {
