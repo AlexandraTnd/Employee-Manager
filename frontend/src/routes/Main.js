@@ -5,18 +5,18 @@ function Main() {
     return (
         <div>
             <Header />
-          <main>
-            <section className="side-menu">
-              <ul>
-                <li><a href="/">See employees</a></li>
-              </ul>
-            </section>
-            <section className="content">
-              <EmployeeTable />
-            </section>
-          </main>
+            <main>
+                <section className="side-menu">
+                    <ul>
+                        <li><a href="/">See employees</a></li>
+                    </ul>
+                </section>
+                <section className="content">
+                    <EmployeeTable />
+                </section>
+            </main>
         </div>
-      );
+    );
 }
 
 export default Main;
