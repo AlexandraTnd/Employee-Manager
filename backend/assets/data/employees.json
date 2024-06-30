@@ -1,28 +1,88 @@
 {
-    "employees": [
-        {
-            "id": 1,
-            "firstName": "John",
-            "lastName": "Doe",
-            "address": {
-                "street": "Peaches Str.",
-                "streetNumber": 30,
-                "city": "New Ville"
-            },
-            "position": "worker",
-            "hireDate": "2024-03-06"
-        },
-        {
-            "id": 2,
-            "firstName": "Jane",
-            "lastName": "Doe",
-            "address": {
-                "street": "Peaches Str.",
-                "streetNumber": 30,
-                "city": "New Ville"
-            },
-            "position": "worker",
-            "hireDate": "2024-03-06"
-        }
-    ]
+  "employees": [
+    {
+      "id": 1,
+      "firstName": "John",
+      "lastName": "Doe",
+      "address": {
+        "street": "Peaches Str.",
+        "streetNumber": "30",
+        "city": "New Ville"
+      },
+      "position": "worker",
+      "hireDate": "2024-03-06"
+    },
+    {
+      "id": 2,
+      "firstName": "Jane",
+      "lastName": "Doe",
+      "address": {
+        "street": "Peaches Str.",
+        "streetNumber": "30",
+        "city": "New Ville"
+      },
+      "position": "worker",
+      "hireDate": "2024-03-06"
+    },
+    {
+      "firstName": "Anna",
+      "lastName": "Sanders",
+      "address": {
+        "street": "Hills",
+        "streetNumber": "34",
+        "city": "New York"
+      },
+      "position": "Secretary",
+      "hireDate": "2024-05-01",
+      "id": 3
+    },
+    {
+      "firstName": "Hellen",
+      "lastName": "Andersen",
+      "address": {
+        "street": "Crosses",
+        "streetNumber": "54",
+        "city": "New Apple"
+      },
+      "position": "Secretary",
+      "hireDate": "2024-06-04",
+      "id": 4
+    },
+    {
+      "firstName": "Hellen2",
+      "lastName": "Andersen",
+      "address": {
+        "street": "Crosses",
+        "streetNumber": "54",
+        "city": "New Apple"
+      },
+      "position": "Secretary",
+      "hireDate": "2024-06-04",
+      "id": 5
+    },
+    {
+      "firstName": "Adriana",
+      "lastName": "McBee",
+      "address": {
+        "street": "Rockside",
+        "streetNumber": "69",
+        "city": "Houston"
+      },
+      "position": "Sales agent",
+      "hireDate": "2024-04-04",
+      "id": 6
+    },
+    {
+      "firstName": "Adriana",
+      "lastName": "McBee",
+      "address": {
+        "street": "Rockside",
+        "streetNumber": "69",
+        "city": "Houston"
+      },
+      "position": "Sales agent",
+      "hireDate": "2024-04-04",
+      "id": 7
+    }
+  ]
 }
