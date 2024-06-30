@@ -183,3 +183,12 @@ i {
   align-items: flex-end;
 }
 
+/* Pagination */
+.page-item:not(.disabled):not(.active) > .page-link {
+  color: var(--primary-color) !important;
+}
+
+li[class="page-item active"] > a {
+  background-color: var(--primary-color) !important;
+  border-color: var(--primary-color) !important;
+}
