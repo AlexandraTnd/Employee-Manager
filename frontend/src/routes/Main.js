@@ -1,11 +1,10 @@
 import EmployeeTable from "../components/EmployeeTable";
+import Header from "../components/Header";
 
 function Main() {
     return (
         <div>
-          <header>
-            <h1><span className="text-primary">Employee</span> Manager</h1>
-          </header>
+            <Header />
           <main>
             <section className="side-menu">
               <ul>
