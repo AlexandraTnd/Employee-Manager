@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import Pagination from './Pagination';
 
 function EmployeeTable() {
     const [employees, setEmployees] = useState();
@@ -60,7 +61,7 @@ function EmployeeTable() {
             });
             setIsAscendingByPosition(false);
             setEmployees(orderedEmployees);
-        }  
+        }
     }
 
     function sortByHireDate() {
@@ -72,7 +73,7 @@ function EmployeeTable() {
             const orderedEmployees = [...employees].sort((a, b) => new Date(b.hireDate) - new Date(a.hireDate));
             setIsAscendingByHireDate(false);
             setEmployees(orderedEmployees);
-        }  
+        }
     }
 
     useEffect(() => {
@@ -112,6 +113,7 @@ function EmployeeTable() {
                     }) : <tr><td colSpan={5} className='text-center'>No Data to view</td></tr>
                 }
             </tbody>
+            <Pagination employees={employees} />
         </table>
     )
 }
