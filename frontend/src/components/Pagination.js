@@ -1,8 +1,5 @@
-import { useState } from 'react';
 
-function Pagination({ employees, currentPage, setCurrentPage }) {
-    
-    const maxPages = Math.ceil(employees.length / 10);
+function Pagination({ employees, currentPage, setCurrentPage, maxPages }) {
 
     function handlePageChange(e) {
         if (e.target.innerText === "Next" && currentPage < maxPages) {

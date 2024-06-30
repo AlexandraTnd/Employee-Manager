@@ -6,7 +6,8 @@ function EmployeeTable() {
     const [isAscendingByName, setIsAscendingByName] = useState(false);
     const [isAscendingByPosition, setIsAscendingByPosition] = useState(false);
     const [isAscendingByHireDate, setIsAscendingByHireDate] = useState(false);
-
+    const [currentPage, setCurrentPage] = useState(1);
+    const [maxPages, setMaxPages] = useState(1);
 
     function sortByName() {
         if (!isAscendingByName) {
@@ -81,6 +82,7 @@ function EmployeeTable() {
             const response = await fetch('http://localhost:4000/');
             const data = await response.json();
             setEmployees(data.employees);
+            setMaxPages(Math.ceil(data.employees.length / 10));
         }
         getData();
     }, []);
@@ -102,19 +104,20 @@ function EmployeeTable() {
                     {employees ?
                         employees.map((employee, index) => {
                             return (
-                                <tr key={index}>
-                                    <td>{index + 1}</td>
-                                    <td>{employee.lastName + " " + employee.firstName}</td>
-                                    <td>{employee.address.street + " no. " + employee.address.streetNumber + ", " + employee.address.city}</td>
-                                    <td className='text-center'>{employee.position}</td>
-                                    <td className='text-center'>{employee.hireDate}</td>
-                                </tr>
+                                index + 1 > (currentPage - 1) * 10 && index < currentPage * 10 ?
+                                    <tr key={index}>
+                                        <td>{index + 1}</td>
+                                        <td>{employee.lastName + " " + employee.firstName}</td>
+                                        <td>{employee.address.street + " no. " + employee.address.streetNumber + ", " + employee.address.city}</td>
+                                        <td className='text-center'>{employee.position}</td>
+                                        <td className='text-center'>{employee.hireDate}</td>
+                                    </tr> : ""
                             )
                         }) : <tr><td colSpan={5} className='text-center'>No Data to view</td></tr>
                     }
                 </tbody>
             </table>
-            { employees ? <Pagination employees={employees} /> : ""}
+            {employees ? <Pagination employees={employees} currentPage={currentPage} setCurrentPage={setCurrentPage} maxPages={maxPages} /> : ""}
         </section>
     )
 }
