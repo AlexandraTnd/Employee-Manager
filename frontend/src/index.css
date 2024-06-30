@@ -188,7 +188,7 @@ i {
   color: var(--primary-color) !important;
 }
 
-li[class="page-item active"] > a {
+li[class="page-item active"] > button {
   background-color: var(--primary-color) !important;
   border-color: var(--primary-color) !important;
 }
