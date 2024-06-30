@@ -29,6 +29,10 @@ code {
   color: var(--primary-color);
 }
 
+.text-center {
+  text-align: center !important;
+}
+
 /* Header */
 header {
   text-align: center;
@@ -46,5 +50,50 @@ header h1 {
 /* Main */
 main {
   display: flex;
+  margin-top: 20px;
+  justify-content: space-around;
 }
 
+/* Side Menu */
+.side-menu {
+  width: 20%;
+  display: flex;
+  justify-content: center;
+}
+
+.side-menu ul {
+  list-style: none;
+}
+
+.side-menu ul li a {
+  text-decoration: none;
+  color: black;
+  font-weight: bolder;
+}
+
+.side-menu ul li a:hover {
+  color: var(--primary-color);
+}
+
+/* Content */
+.content {
+  width: 75%;
+  display: flex;
+  justify-content: center;
+}
+
+
+/* Table */
+table {
+  margin: auto;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead {
+  background-color: var(--primary-color);
+}
+
+th, td {
+  padding: 10px;
+}
