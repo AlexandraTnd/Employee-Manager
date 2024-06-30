@@ -1,0 +1,14 @@
+{
+    "employees": {
+        "id": 1,
+        "firstName": "John",
+        "lastName": "Doe",
+        "address" : {
+            "street": "Peaches",
+            "streetNumber": 30,
+            "city": "New Ville"
+        },
+        "position": "worker",
+        "hireDate": "2024-03-06"
+    }
+}
