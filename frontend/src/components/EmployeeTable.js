@@ -87,34 +87,36 @@ function EmployeeTable() {
     }, []);
 
     return (
-        <table>
-            <thead>
-                <tr>
-                    <th style={{ width: "5%" }}></th>
-                    <th style={{ width: "20%" }}>Name<button onClick={() => sortByName()}><i className="fa-solid fa-sort"></i></button></th>
-                    <th style={{ width: "40%" }}>Address</th>
-                    <th style={{ width: "10%" }}>Position<button onClick={() => sortByPosition()}><i className="fa-solid fa-sort"></i></button></th>
-                    <th style={{ width: "10%" }}>Hire Date<button onClick={() => sortByHireDate()}><i className="fa-solid fa-sort"></i></button></th>
-                </tr>
+        <section className="content">
+            <table>
+                <thead>
+                    <tr>
+                        <th style={{ width: "5%" }}></th>
+                        <th style={{ width: "20%" }}>Name<button onClick={() => sortByName()}><i className="fa-solid fa-sort"></i></button></th>
+                        <th style={{ width: "40%" }}>Address</th>
+                        <th style={{ width: "10%" }}>Position<button onClick={() => sortByPosition()}><i className="fa-solid fa-sort"></i></button></th>
+                        <th style={{ width: "10%" }}>Hire Date<button onClick={() => sortByHireDate()}><i className="fa-solid fa-sort"></i></button></th>
+                    </tr>
 
-            </thead>
-            <tbody>
-                {employees ?
-                    employees.map((employee, index) => {
-                        return (
-                            <tr key={index}>
-                                <td>{index + 1}</td>
-                                <td>{employee.lastName + " " + employee.firstName}</td>
-                                <td>{employee.address.street + " no. " + employee.address.streetNumber + ", " + employee.address.city}</td>
-                                <td className='text-center'>{employee.position}</td>
-                                <td className='text-center'>{employee.hireDate}</td>
-                            </tr>
-                        )
-                    }) : <tr><td colSpan={5} className='text-center'>No Data to view</td></tr>
-                }
-            </tbody>
+                </thead>
+                <tbody>
+                    {employees ?
+                        employees.map((employee, index) => {
+                            return (
+                                <tr key={index}>
+                                    <td>{index + 1}</td>
+                                    <td>{employee.lastName + " " + employee.firstName}</td>
+                                    <td>{employee.address.street + " no. " + employee.address.streetNumber + ", " + employee.address.city}</td>
+                                    <td className='text-center'>{employee.position}</td>
+                                    <td className='text-center'>{employee.hireDate}</td>
+                                </tr>
+                            )
+                        }) : <tr><td colSpan={5} className='text-center'>No Data to view</td></tr>
+                    }
+                </tbody>
+            </table>
             <Pagination employees={employees} />
-        </table>
+        </section>
     )
 }
 
