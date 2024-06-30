@@ -1,8 +1,17 @@
+import { Link } from "react-router-dom";
+
 function SideMenu() {
     return (
         <ul>
-            <li><a href="/">See employees</a></li>
-            <li><a href="addNewEmployee">Add new employee</a></li>
+            <li>
+                <Link to="/">See employees</Link>
+            </li>
+            <li>
+                <Link to="addNewEmployee">Add new employee</Link>
+            </li>
+            <li>
+                <Link to="statistics">Statistics</Link>
+            </li>
         </ul>
     )
 }
