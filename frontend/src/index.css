@@ -98,7 +98,7 @@ main {
   width: 80%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
 }
 
@@ -107,6 +107,7 @@ main {
 table {
   width: 100%;
   border: 1px solid white;
+  
 }
 
 thead {
@@ -165,7 +166,7 @@ form.add-new button {
   background-color: var(--primary-color);
   border: none;
   padding: 10px;
-  margin-top: 10px;
+  margin: 10px 0;
   border-radius: 10px;
   font-size: large;
   font-weight: bold;
