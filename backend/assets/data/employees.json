@@ -83,6 +83,42 @@
       "position": "Sales agent",
       "hireDate": "2024-04-04",
       "id": 7
+    },
+    {
+      "firstName": "James",
+      "lastName": "State",
+      "address": {
+        "street": "Mal",
+        "streetNumber": "88",
+        "city": "Paris"
+      },
+      "position": "Mailman",
+      "hireDate": "2024-05-01",
+      "id": 8
+    },
+    {
+      "firstName": "Adam",
+      "lastName": "Johnson",
+      "address": {
+        "street": "Blossom",
+        "streetNumber": "32",
+        "city": "Bucharest"
+      },
+      "position": "Secretary",
+      "hireDate": "2024-05-01",
+      "id": 9
+    },
+    {
+      "firstName": "James",
+      "lastName": "Button",
+      "address": {
+        "street": "Hills",
+        "streetNumber": "32",
+        "city": "Madrid"
+      },
+      "position": "Secretary",
+      "hireDate": "2024-06-05",
+      "id": 10
     }
   ]
 }
