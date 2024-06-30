@@ -7,12 +7,8 @@ function Main() {
         <div>
             <Header />
             <main>
-                <section className="side-menu">
-                    <SideMenu />
-                </section>
-                <section className="content">
-                    <EmployeeTable />
-                </section>
+                <SideMenu />
+                <EmployeeTable />
             </main>
         </div>
     );
