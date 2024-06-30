@@ -118,6 +118,7 @@ function EmployeeTable() {
                 </tbody>
             </table>
             {employees ? <Pagination employees={employees} currentPage={currentPage} setCurrentPage={setCurrentPage} maxPages={maxPages} /> : ""}
+            
         </section>
     )
 }

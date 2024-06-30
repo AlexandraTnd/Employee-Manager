@@ -180,8 +180,8 @@ i {
   margin-top: 10px;
   width: 100% !important;
   display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
+  justify-content: space-between;
+  align-items: center;
 }
 
 /* Pagination */
@@ -189,7 +189,30 @@ i {
   color: var(--primary-color) !important;
 }
 
+#pagination > ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
 li[class="page-item active"] > button {
   background-color: var(--primary-color) !important;
   border-color: var(--primary-color) !important;
+}
+
+#export {
+  margin: 0;
+  background: var(--primary-color);
+  border: none;
+  padding: 10px;
+  line-height: 14px;
+  border-radius: 5px;
+  color: white;
+}
+
+#export:hover {
+  color: black;
+  background-color: rgb(253, 164, 131);
 }

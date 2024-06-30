@@ -1,4 +1,6 @@
 
+import ExcelExport from "./ExportToExcel";
+
 function Pagination({ employees, currentPage, setCurrentPage, maxPages }) {
 
     function handlePageChange(e) {
@@ -13,6 +15,7 @@ function Pagination({ employees, currentPage, setCurrentPage, maxPages }) {
 
     return (
         <div id="pagination" >
+            <ExcelExport employees={employees} fileName={"EmployeeList"} />
             <ul className="pagination">
                 <li className={currentPage === 1 ? "page-item disabled" : "page-item"}>
                     <button onClick={(e) => handlePageChange(e)} className="page-link">Previous</button>
