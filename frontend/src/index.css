@@ -121,6 +121,11 @@ table tr:nth-child(even) {
   background-color: rgb(250, 227, 218);
 }
 
+thead tr th button {
+  background: none;
+  border: none;
+}
+
 /* Add new employee form */
 
 .content h1 {
@@ -164,4 +169,8 @@ form.add-new button {
   border-radius: 10px;
   font-size: large;
   font-weight: bold;
+}
+
+i {
+  margin: auto 3px;
 }
