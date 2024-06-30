@@ -33,6 +33,16 @@ code {
   text-align: center !important;
 }
 
+.hidden {
+  display: none;
+}
+
+.warning {
+  color: red;
+  text-align: center;
+  font-weight: bold;
+}
+
 /* Header */
 header {
   text-align: center;
@@ -51,14 +61,16 @@ header h1 {
 main {
   display: flex;
   margin-top: 20px;
-  justify-content: space-around;
+  justify-content: space-evenly;
 }
 
 /* Side Menu */
 .side-menu {
-  width: 20%;
+  width: 15%;
   display: flex;
   justify-content: center;
+  height: calc(100vh - 150px);
+  border-right: 1px solid coral;
 }
 
 .side-menu ul {
@@ -68,17 +80,24 @@ main {
 .side-menu ul li a {
   text-decoration: none;
   color: black;
+  font-size: 1.2rem;
   font-weight: bolder;
+  display: block;
+  margin: auto;
+  padding: 10px 15px;
+  border-radius: 10px;
 }
 
 .side-menu ul li a:hover {
   color: var(--primary-color);
+  background-color: #282c34;
 }
 
 /* Content */
 .content {
-  width: 75%;
+  width: 80%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
 }
 
@@ -87,7 +106,7 @@ main {
 table {
   margin: auto;
   width: 100%;
-  border-collapse: collapse;
+  border: 1px solid white;
 }
 
 thead {
@@ -96,4 +115,53 @@ thead {
 
 th, td {
   padding: 10px;
+}
+
+table tr:nth-child(even) {
+  background-color: rgb(250, 227, 218);
+}
+
+/* Add new employee form */
+
+.content h1 {
+  margin: auto;
+}
+
+form.add-new {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  min-width: 30vw;
+  max-width: 50vw;
+}
+
+form.add-new input {
+  outline: none;
+  border: 1px solid grey;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+form.add-new input:focus {
+  border: 1px solid var(--primary-color);
+}
+
+form.add-new hr {
+  width: 70%;
+  margin: 30px auto 15px auto;
+}
+
+form.add-new label {
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+form.add-new button {
+  background-color: var(--primary-color);
+  border: none;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 10px;
+  font-size: large;
+  font-weight: bold;
 }
