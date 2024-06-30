@@ -80,7 +80,6 @@ function EmployeeTable() {
         async function getData() {
             const response = await fetch('http://localhost:4000/');
             const data = await response.json();
-            console.log(data.employees);
             setEmployees(data.employees);
         }
         getData();
@@ -115,7 +114,7 @@ function EmployeeTable() {
                     }
                 </tbody>
             </table>
-            <Pagination employees={employees} />
+            { employees ? <Pagination employees={employees} /> : ""}
         </section>
     )
 }
